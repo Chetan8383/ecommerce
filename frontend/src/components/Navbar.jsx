@@ -44,6 +44,8 @@ const Navbar = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, [prevScrollPos]);
 
+  const [showDropdown, setShowDropdown] = useState(false);
+
   return (
     <div
       className={`nav fixed z-40 top-4 left-1/2 transform -translate-x-1/2 max-w-5xl w-full flex items-center justify-between py-5 px-6 font-medium backdrop-blur-lg rounded-xl shadow-md transition-transform duration-300 ${
@@ -53,8 +55,8 @@ const Navbar = () => {
       {/* Logo */}
       <Link to="/">
         <p className="text-lg sm:text-2xl saira-font-bold flex flex-row items-center">
-          <CiShop />
-          {/* <img src="/logo.svg" alt="" /> */}
+          {/* <CiShop /> */}
+          <img src="/logo.svg" alt="" />
           &nbsp;Otaku <span className="text-violet-500">Mart</span>
         </p>
       </Link>
@@ -97,22 +99,33 @@ const Navbar = () => {
         />
 
         {/* User Profile Dropdown */}
-        <div className="relative group">
-          {/* <Link to="/login"> */}
+        <div className="relative">
           <CiUser
-            onClick={() => (token ? null : navigate("/login"))}
+            onClick={() => {
+              if (!token) {
+                navigate("/login");
+              } else {
+                setShowDropdown(!showDropdown); // Toggle dropdown visibility
+              }
+            }}
             className="text-xl sm:text-2xl cursor-pointer hover:text-amber-700"
+            aria-label="User Profile"
           />
-          {/* </Link> */}
-          {token && (
-            <div className="absolute right-0 hidden group-hover:block bg-violet-50 text-gray-700 font-normal rounded-lg shadow-lg w-36 p-3">
-              <p className="cursor-pointer hover:text-amber-700">My Profile</p>
-              <p
-                onClick={() => navigate("/orders")}
-                className="cursor-pointer hover:text-amber-700"
+
+          {token && showDropdown && (
+            <div className="absolute right-0 bg-violet-50 text-gray-700 font-normal rounded-lg shadow-lg w-36 p-3">
+              <Link
+                to="/profile"
+                className="block cursor-pointer hover:text-amber-700"
+              >
+                My Profile
+              </Link>
+              <Link
+                to="/orders"
+                className="block cursor-pointer hover:text-amber-700"
               >
                 Orders
-              </p>
+              </Link>
               <p
                 onClick={logout}
                 className="cursor-pointer hover:text-amber-700"

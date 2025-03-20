@@ -50,7 +50,7 @@ const Footer = () => {
               <Link
                 onClick={scrollToTop}
                 className="text-gray-700 transition hover:text-violet-600"
-                href="/orders"
+                to="/orders"
               >
                 {" "}
                 Orders{" "}
@@ -83,7 +83,8 @@ const Footer = () => {
               <Link
                 className="text-gray-700 transition hover:text-violet-600"
                 onClick={scrollToTop}
-                to="#"
+                to="https://otakumart-admin.vercel.app/"
+                target="_blank"
               >
                 {" "}
                 Admin{" "}
@@ -192,7 +193,7 @@ const Footer = () => {
         <span className="relative flex justify-center mb-5">
           <div className="absolute inset-x-0 top-1/2 h-px -translate-y-1/2 bg-transparent bg-gradient-to-r from-transparent via-gray-500 to-transparent opacity-75"></div>
 
-          <span className="relative z-10 bg-white px-6">
+          <span className="relative bg-white px-6">
             © 2025. OtakuMart. All rights reserve{" "}
             <Link
               to="https://chetan8383.github.io/Portfolio/"
