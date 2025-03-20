@@ -1,0 +1,36 @@
+@import url('https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Saira:ital,wght@0,100..900;1,100..900&family=Shadows+Into+Light&display=swap');
+@import "tailwindcss";
+
+
+.saira-font {
+    font-family: "Saira", serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-variation-settings:
+        "wdth" 100;
+}
+
+.saira-font-bold {
+    font-family: "Saira", serif;
+    font-optical-sizing: auto;
+    font-weight: 900;
+    font-style: normal;
+    font-variation-settings:
+        "wdth" 100;
+}
+
+.active{
+    background-color: oklch(0.943 0.029 294.588);
+    color: oklch(0.283 0.141 291.089);
+    border: 1px gray solid;
+    transition: .3s all;
+}
+
+select,input,textarea{
+    border: 1px solid #c2c2c2;
+    outline-color: black;
+    border-radius: 4px;
+    transition: .3s ease-in-out;
+}
