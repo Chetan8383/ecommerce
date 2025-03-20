@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from "react";
 import { ShopContext } from "../context/ShopContext";
 import Title from "../components/Title";
-import { CiSquarePlus, CiTrash } from "react-icons/ci";
+import { CiTrash } from "react-icons/ci";
 import CartTotal from "../components/cartTotal";
 
 const cart = () => {
@@ -41,7 +41,6 @@ const cart = () => {
             (product) => product._id === item._id
           );
           console.log(productData);
-          
 
           return (
             <div
