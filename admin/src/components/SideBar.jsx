@@ -14,7 +14,7 @@ const SideBar = ({ setToken }) => {
       <div className="flex h-screen z-50 w-16 flex-col justify-between border-e border-gray-100 bg-white">
         <div>
           <div className="inline-flex size-16 items-center justify-center">
-            <Link to='https://otakumart.netlify.app/' target="_blank">
+            <Link to='https://otakumart-frontend.vercel.app/' target="_blank">
               <span className="grid size-10 place-content-center rounded-lg bg-gray-100 text-2xl text-gray-600 hover:bg-violet-500 hover:text-white duration-300">
                 <CiShop />
               </span>

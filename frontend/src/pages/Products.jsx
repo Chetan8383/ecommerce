@@ -105,7 +105,7 @@ const Products = () => {
               ADD TO BAG
               <CiShoppingBasket className="text-2xl ml-2" />
             </button>
-            <Link to="/cart">
+            <Link to="/cart" onClick={scrollToTop}>
               <button className="bg-violet-50 border border-violet-700 cursor-pointer flex items-center rounded-lg duration-200 text-black px-4 py-3 text-sm hover:bg-violet-500 hover:text-white active:bg-violet-500">
                 View Cart
                 <CiShoppingCart className="text-2xl ml-2" />
